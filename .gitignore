@@ -1,0 +1,9 @@
+slides/_site/**
+!slides/_site/.gitkeep
+node_modules/
+dist/
+.npm
+.eslintcache
+__pycache__/
+*.py[cod]
+.venv/
