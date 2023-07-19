@@ -25,6 +25,8 @@ I am writing something in Rust:
 
 [github.com/bowmanjd/busser](https://github.com/bowmanjd/busser) <!-- .element: class="r-fit-text" -->
 
+It processes CSV files. <span class="fragment">Fun, fun.</span>
+
 ---
 
 Commercial Break <!-- .element: class="r-fit-text" -->
@@ -50,7 +52,7 @@ I am exploring Obsidian, a note-taking framework ([obsidian.md](https://obsidian
 
 ---
 
-```sh
+```txt
 ❯ busser --help
 Usage: busser <command> [<args>]
 
@@ -97,9 +99,7 @@ CustomerID, FirstName, LastName, StartDate
 
 ---
 
-```sh
-busser output -t Characters sample.csv
-```
+`busser output -t Characters sample.csv`
 
 ---
 
@@ -111,15 +111,15 @@ CustomerID\u{1f}FirstName\u{1f}LastName\u{1f}StartDate\u{1e}
 
 ---
 
-```sh
-bcp Characters in Characters.txt -c -t0x1f -r0x1e -d LegacyData -T -e character_errors.log
-```
+<!-- .slide: style="text-align: left"  -->
+
+`bcp Characters in Characters.txt -c -t0x1f -r0x1e -d LegacyData -T -e character_errors.log`
 
 ---
 
-```sh
-busser output -i -t Characters -j -o Characters.sql sample.csv
-```
+<!-- .slide: style="text-align: left"  -->
+
+`busser output -i -t Characters -j -o Characters.sql sample.csv`
 
 ---
 
@@ -131,9 +131,12 @@ SELECT
     LastName,
     StartDate
 FROM OPENJSON('[ \
-    {"CustomerID": "12345", "FirstName": "Fred", "LastName": "Flintstone", "StartDate": "1960-09-30"}, \
-    {"CustomerID": "67890", "FirstName": "Lisa", "LastName": "Simpson", "StartDate": "1989-12-17"} \
-]') WITH (CustomerID VARCHAR(5), FirstName VARCHAR(4), LastName VARCHAR(10), StartDate VARCHAR(10));
+    {"CustomerID": "12345", "FirstName": "Fred", \
+     "LastName": "Flintstone", "StartDate": "1960-09-30"}, \
+    {"CustomerID": "67890", "FirstName": "Lisa", \
+     "LastName": "Simpson", "StartDate": "1989-12-17"} \
+]') WITH (CustomerID VARCHAR(5), FirstName VARCHAR(4),
+          LastName VARCHAR(10), StartDate VARCHAR(10));
 ```
 
 ---
@@ -154,7 +157,9 @@ A $15 hobby (or home automation) device, based on the ESP32 system-on-a-chip. [m
 
 ---
 
-The most work (and the most compute) is involved in the schema inference. Feed a CSV file to `busser schema`, and out comes a CREATE TABLE statement for Microsoft SQL Server, with columns correctly (and quite conservatively, at this point) typed.
+<!-- .slide: style="text-align: left"  -->
+
+The most work (and the most compute) is involved in the schema inference. Feed a CSV file to `busser schema`, and out comes a `CREATE TABLE` statement for Microsoft SQL Server, with columns correctly (and quite conservatively, at this point) typed.
 
 ---
 
@@ -162,7 +167,7 @@ The most work (and the most compute) is involved in the schema inference. Feed a
 ❯ busser schema -t Characters sample.csv
 DROP TABLE IF EXISTS Characters;
 CREATE TABLE Characters (CustomerID INT, FirstName CHAR(4), 
-                         LastName VARCHAR(10), StartDate DATE);
+                     LastName VARCHAR(10), StartDate DATE);
 ```
 
 ---
