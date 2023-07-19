@@ -1,17 +1,17 @@
-![rust logo](assets/rust-logo.svg) <!-- .element: style="height: 45vh" -->
+![rust logo](assets/rust-logo.svg) <!-- .element class="hero" -->
 
-littlerusty.bowmanjd.com
-![QR code](assets/qrcode.svg) <!-- .element: class="r-stretch" style="vertical-align: middle" -->
+alittlerusty.bowmanjd.com <!-- .element class="r-fit-text" -->
+![QR code](assets/qrcode.svg) <!-- .element style="vertical-align: middle" -->
 
 ---
 
-## Ferris the rustacean
+## You might be a rustacean
 
 ![Ferris the rustacean](assets/rustacean.svg)
 
 ---
 
-## Rust is a language
+## Rust is a programming language
 
 ```rust
 fn main() {
@@ -41,6 +41,8 @@ and **notes** to *your loved ones*!
 ```
 
 Use it in Teams, Jira, Zendesk, `GitHub`, and **notes** to *your loved ones*!
+
+I am exploring Obsidian, a note-taking framework ([obsidian.md](https://obsidian.md))
 
 ---
 
@@ -136,12 +138,46 @@ FROM OPENJSON('[ \
 
 ---
 
+Commercial Break <!-- .element: class="r-fit-text" -->
+
+---
+
+## The Atom Matrix by M5Stack
+
+![M5Stack Atom Matrix](assets/m5atom.png) <!-- .element: class="r-stretch" -->
+
+A $15 hobby (or home automation) device, based on the ESP32 system-on-a-chip. [m5stack.com](https://m5stack.com) 
+
+---
+
+![Ferris the rustacean](assets/rustacean-wave.svg)
+
+---
+
+The most work (and the most compute) is involved in the schema inference. Feed a CSV file to `busser schema`, and out comes a CREATE TABLE statement for Microsoft SQL Server, with columns correctly (and quite conservatively, at this point) typed.
+
+---
+
 ```sql
 ❯ busser schema -t Characters sample.csv
 DROP TABLE IF EXISTS Characters;
 CREATE TABLE Characters (CustomerID INT, FirstName CHAR(4), 
                          LastName VARCHAR(10), StartDate DATE);
 ```
+
+---
+
+## Why Rust?
+
+- Something new and well designed
+- Such hospitality!
+- Great documentation: rust-lang.org/learn
+- Memory safe, yet no garbage collector
+- So. Fast.
+
+---
+
+<!-- .slide: data-background-image="assets/busser.gif"  -->
 
 ---
 
@@ -154,5 +190,21 @@ _Not quite_ ready for primetime.
 Yet you might consider learning something new!
 
 Invigorating and humbling.
+
+---
+
+Commercial Break <!-- .element: class="r-fit-text" -->
+
+---
+
+## Home Assistant 
+
+home-assistant.io
+
+![Home Assistant](assets/homeassistant.svg)
+
+---
+
+![Ferris the rustacean](assets/rustacean-happy.svg)
 
 ---
